@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+:root {
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-keypad: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+
+    --key-bg-primary: hsl(30, 25%, 89%);
+    --key-shadow-primary: hsl(28, 16%, 65%);
+
+    --key-bg-secondary: hsl(225, 21%, 49%);
+    --key-shadow-secondary: hsl(224, 28%, 35%);
+
+    --key-bg-tertiary: hsl(6, 63%, 50%);
+    --key-shadow-tertiary: hsl(6, 70%, 34%);
+
+    --text-primary: hsl(221, 14%, 31%);
+    --text-secondary: hsl(0, 0%, 100%);
+    --text-display: hsl(0, 0%, 100%);
+}
+
+body.theme2 {
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-keypad: hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+
+    --key-bg-primary: hsl(45, 7%, 89%);
+    --key-shadow-primary: hsl(35, 11%, 61%);
+
+    --key-bg-secondary: hsl(185, 42%, 37%);
+    --key-shadow-secondary: hsl(185, 58%, 25%);
+
+    --key-bg-tertiary: hsl(25, 98%, 40%);
+    --key-shadow-tertiary: hsl(25, 99%, 27%);
+
+    --text-primary: hsl(60, 10%, 19%);
+    --text-secondary: hsl(0, 0%, 100%);
+    --text-display: hsl(60, 10%, 19%);
+}
+
+body.theme3 {
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-keypad: hsl(268, 71%, 12%);
+    --bg-screen: hsl(268, 71%, 12%);
+
+    --key-bg-primary: hsl(268, 47%, 21%);
+    --key-shadow-primary: hsl(290, 70%, 36%);
+
+    --key-bg-secondary: hsl(281, 89%, 26%);
+    --key-shadow-secondary: hsl(285, 91%, 52%);
+
+    --key-bg-tertiary: hsl(176, 100%, 44%);
+    --key-shadow-tertiary: hsl(177, 92%, 70%);
+
+    --text-primary: hsl(52, 100%, 62%);
+    --text-secondary: hsl(0, 0%, 100%);
+    --text-display: hsl(52, 100%, 62%);
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-main);
+    transition: background-color 0.3s ease;
+
+}
+
+.title {
+    font-size: 12px;
+    color: var(--text-display);
+    width: 100%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.calculator {
+    width: 320px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.theme-switcher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.theme-switcher .title {
+    font-size: 20px;
+    color: var(--text-display);
+}
+
+.theme-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-text {
+    color: var(--text-display);
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    align-self: center;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 70px; /* Ancho fijo para el switch */
+}
+
+.switch-numbers {
+    display: flex;
+    justify-content: space-between; /* Cambiado de space-around a space-between */
+    width: 70%;
+}
+
+.switch-container {
+    position: relative;
+    background-color: var(--bg-keypad);
+    padding: 5px;
+    border-radius: 15px;
+    width: 100%;
+    height: 15px;
+}
+
+.switch input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 20px; /* Ancho fijo para cada input */
+    height: 20px;
+}
+
+.switch label {
+    color: var(--text-display);
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 0;
+}
+
+.switch-circle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--key-bg-tertiary);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    left: 10px;
+}
+
+.display {
+    background-color: var(--bg-screen);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.display input {
+    width: 100%;
+    border: none;
+    background: none;
+    font-size: 48px;
+    text-align: right;
+    margin-right: 5px;
+    font-weight: 700;
+    font-family: 'League Spartan', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    color: var(--text-display);
+    padding: 10px;
+}
+
+.calculator,
+.display,
+.key {
+    transition: all 0.3s ease;
+}
+
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: var(--bg-screen);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.key {
+    background-color: var(--key-bg-primary);
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px var(--key-shadow-primary);
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.key:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px var(--key-shadow-primary);
+}
+
+.key.span-two {
+    grid-column: span 2;
+}
+
+button.key:nth-child(4),  /* DEL */
+button.key:nth-last-child(2) {  /* RESET */
+    background-color: var(--key-bg-secondary);
+    box-shadow: 0 4px var(--key-shadow-secondary);
+    color: var(--text-secondary);
+}
+
+
+
+button.key:last-child {
+    background-color: var(--key-bg-tertiary);
+    box-shadow: 0 4px var(--key-shadow-tertiary);
+    color: var(--text-secondary);
+}
+
+button.key:nth-last-child(2) {
+    background-color: var(--key-bg-secondary);
+    box-shadow: 0 4px var(--key-shadow-secondary);
+    color: var(--text-secondary);
+}
+
+button.key:last-child {
+    background-color: var(--key-bg-tertiary);
+    box-shadow: 0 4px var(--key-shadow-tertiary);
+    color: var(--text-secondary);
+}
+
+body:has(#theme1:checked) .switch-circle {
+    transform: translateX(0);
+}
+
+body:has(#theme2:checked) .switch-circle {
+    transform: translateX(22px); /* Ajustado para alinear con el número 2 */
+}
+
+body:has(#theme3:checked) .switch-circle {
+    transform: translateX(44px); /* Ajustado para alinear con el número 3 */
+}
+
+.key:hover {
+    filter: brightness(1.2);
+}
+
+.key:active {
+    transform: translateY(4px);
+    box-shadow: none !important;
+}

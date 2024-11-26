@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Calculator app</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="calculator">
+    <div class="theme-switcher">
+      <span class="title">calc</span>
+      <div class="theme-controls">
+        <span class="theme-text">THEME</span>
+        <div class="switch">
+          <div class="switch-numbers">
+            <label for="theme1">1</label>
+            <label for="theme2">2</label>
+            <label for="theme3">3</label>
+          </div>
+          <div class="switch-container">
+            <div class="switch-circle"></div>
+            <input type="radio" name="theme" id="theme1" checked>
+            <input type="radio" name="theme" id="theme2">
+            <input type="radio" name="theme" id="theme3">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="display">
+      <input type="text" id="display" readonly>
+    </div>
+    <div class="keypad">
+      <button class="key">7</button>
+      <button class="key">8</button>
+      <button class="key">9</button>
+      <button class="key span-three">DEL</button>
+      <button class="key">4</button>
+      <button class="key">5</button>
+      <button class="key">6</button>
+      <button class="key">+</button>
+      <button class="key">1</button>
+      <button class="key">2</button>
+      <button class="key">3</button>
+      <button class="key">-</button>
+      <button class="key">.</button>
+      <button class="key">0</button>
+      <button class="key">/</button>
+      <button class="key">X</button>
+      <button class="key span-two">RESET</button>
+      <button class="key span-two">=</button>
+    </div>
+  </div>
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
